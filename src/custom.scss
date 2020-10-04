@@ -27,6 +27,10 @@ $brand-primary: #7761FF;
   width: 15rem;
 }
 
+#sidebar-wrapper .list-group-item:hover {
+  color: red;
+}
+
 #page-content-wrapper {
   min-width: 100vw;
 }
@@ -58,6 +62,10 @@ $brand-primary: #7761FF;
     background-color: #50CAFF;
 }
 
-.list-group-flush:hover {
-    color: #7761FF;
-  }
+// .list-group-flush:hover {
+//     color: #7761FF;
+//   }
+
+a:hover {
+  color: black !important;
+}

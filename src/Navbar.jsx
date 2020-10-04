@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Appointments from './Appointments';
+import AppointmentsPreview from './AppointmentsPreview';
 
 const Navbar = () => {
     const [currentMenu, setCurrentMenu] = useState('profile');
@@ -39,12 +39,6 @@ return (
             </ul>
           </div>
         </nav>
-  
-        <div class="container-fluid" id="main-content">
-        { currentMenu === 'profile' ? <Appointments /> : null }
-      </div>
-      
-  
     </>
     );
 }
