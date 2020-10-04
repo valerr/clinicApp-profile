@@ -5,17 +5,17 @@ import AppointmentsPreview from './AppointmentsPreview';
 import MedicalRecords from './MedicalRecords';
 
 const Home = () => (
-    <div class="d-flex" id="wrapper">
-        <div class="bg-blue border-right text-white" id="sidebar-wrapper">
+    <div className="d-flex" id="wrapper">
+        <div className="bg-blue border-right text-white" id="sidebar-wrapper">
             <Menu />
         </div>
         <div id="page-content-wrapper" className="bg-light">
             <Navbar />
-            <div class="container-fluid" id="main-content">
+            <div className="container-fluid">
                 <AppointmentsPreview />
             </div>
-            <div class="container-fluid" id="main-content">
-                {/* <MedicalRecords /> */}
+            <div className="container-fluid">
+               <MedicalRecords />
             </div>
         </div>
     </div>

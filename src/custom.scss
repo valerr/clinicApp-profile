@@ -58,14 +58,34 @@ $brand-primary: #7761FF;
     background-color: #003B72;
 }
 
+.border-blue {
+  border: 1px solid #50CAFF;
+}
+
 .bg-light-blue {
     background-color: #50CAFF;
 }
 
-// .list-group-flush:hover {
-//     color: #7761FF;
-//   }
-
 a:hover {
   color: black !important;
+}
+
+.react-calendar__navigation {
+  background-color: #7761FF;
+ 
+}
+.react-calendar {
+  width: 100%;
+  background: #EBE7FF;
+
+}
+
+.react-calendar__month-view__days__day--neighboringMonth:not {
+  background: white;
+}
+
+.react-calendar__navigation__label,
+.react-calendar__navigation,
+.react-calendar__navigation__arrow {
+   color: white;
 }

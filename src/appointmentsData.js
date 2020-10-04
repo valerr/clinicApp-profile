@@ -21,6 +21,7 @@ const appointmentsData = [
           id: 2,
           name: 'Харьков В. С.',
           specialty: 'Терапевтическое отделение',
+          imgUrl: './images/002.svg',
         },
       },
       {
@@ -32,6 +33,43 @@ const appointmentsData = [
           id: 3,
           name: 'Харьков В. С.',
           specialty: 'Терапевтическое отделение',
+          imgUrl: './images/002.svg',
+        },
+      },
+      {
+        id: 3,
+        dateHuman: 'Понедельник 15.06.20 | 19:30',
+        timestamp: 1592249400,
+        address: 'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
+        doctor: {
+          id: 3,
+          name: 'Харьков В. С.',
+          specialty: 'Терапевтическое отделение',
+          imgUrl: './images/002.svg',
+        },
+      },
+      {
+        id: 3,
+        dateHuman: 'Понедельник 15.06.20 | 19:30',
+        timestamp: 1592249400,
+        address: 'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
+        doctor: {
+          id: 3,
+          name: 'Харьков В. С.',
+          specialty: 'Терапевтическое отделение',
+          imgUrl: './images/002.svg',
+        },
+      },
+      {
+        id: 3,
+        dateHuman: 'Понедельник 15.06.20 | 19:30',
+        timestamp: 1592249400,
+        address: 'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
+        doctor: {
+          id: 3,
+          name: 'Харьков В. С.',
+          specialty: 'Терапевтическое отделение',
+          imgUrl: './images/002.svg',
         },
       },
       {
@@ -43,6 +81,7 @@ const appointmentsData = [
           id: 1,
           name: 'Малушко Т. Н.',
           specialty: 'Терапевтическое отделение',
+          imgUrl: './images/001.svg',
         },
       }
     ];
