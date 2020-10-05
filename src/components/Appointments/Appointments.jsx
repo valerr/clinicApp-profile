@@ -31,11 +31,11 @@ const Appointments = () => {
   
   const filterAppointments = apps => {
     if (value === null) {
-      return appointments.map((item) => AppointmentCard(item))
+      return appointments.map((app) => <AppointmentCard item={app} key={app.id} />)
     } else {
     const filtered = grouped.get((new Date(value)).getTime())
       if (filtered) {
-        return [...filtered].map((item) => AppointmentCard(item))
+        return [...filtered].map((app) => <AppointmentCard item={app} key={app.id}/>)
       }
     }
   };

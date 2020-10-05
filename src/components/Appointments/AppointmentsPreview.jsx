@@ -13,7 +13,7 @@ const AppointmentsPreview = () => {
             <h4 className="m-3 ml-4">Записи на прием</h4>
             <div className="p-1">
                 <div className="d-flex">
-                    {first.map((item) => AppointmentCard(item))}
+                    {first.map((item) => AppointmentCard({item}))}
                     {rest && <div>
                         <p className="font-weight-bold pt-5">Еще {rest} записи</p>
                         <Link to='/appointments'>Подробнее</Link>
