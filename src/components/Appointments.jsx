@@ -1,40 +1,54 @@
 import React, { useState } from 'react';
 import Menu from './Menu';
 import Navbar from './Navbar';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import { Link } from 'react-router-dom';
+import { cancelAppointment } from '../actions';
 
 const Appointments = () => {
   const appointments = useSelector((state) => state.appointments);
 
-    const groupByDay = (appData) => {
-        const result = new Map();
-        for (let item of appData) {
-          let dateWithTime = new Date(0);
-          dateWithTime.setUTCSeconds(item.timestamp)
-          const dateWithoutTime = new Date(dateWithTime.getFullYear(), dateWithTime.getMonth(), dateWithTime.getDate());
-          const timestamp = dateWithoutTime.getTime()
-          if(!result.has(timestamp)) {
-            result.set(timestamp, [item])
-          } else {
-            result.get(timestamp).push(item);
-          }
+  const groupByDay = (appData) => {
+      const result = new Map();
+      for (let item of appData) {
+        let dateWithTime = new Date(0);
+        dateWithTime.setUTCSeconds(item.timestamp)
+        const dateWithoutTime = new Date(dateWithTime.getFullYear(), dateWithTime.getMonth(), dateWithTime.getDate());
+        const timestamp = dateWithoutTime.getTime()
+        if(!result.has(timestamp)) {
+          result.set(timestamp, [item])
+        } else {
+          result.get(timestamp).push(item);
         }
-        return result;
       }
+      return result;
+    }
 
   const grouped = groupByDay(appointments)
-  const [value, onChange] = useState(new Date());
-  const [filtered, setFiltered] = useState([appointments[0]]);
+  const [value, setValue] = useState(null);
+  
+  const dispatch = useDispatch();
 
-  const filterAppointments = (day) => {
-      setFiltered(grouped.get(day.getTime()))
+  const filterAppointments = apps => {
+    if (value === null) {
+      return appointments.map((item) => renderAppointment(item))
+    } else {
+    const filtered = grouped.get((new Date(value)).getTime())
+      if (filtered) {
+        return [...filtered].map((item) => renderAppointment(item))
+      }
+    }
+  };
+
+  const handleCancel = (id) => {
+    dispatch(cancelAppointment({id}));
   }
 
-  const renderAppointment = (item) => (
-    <div className="card mb-2" key={`${item.id}app`}>
+  const renderAppointment = (item) => {
+    return (
+    <div className="card mb-2" key={item.id}>
       <div className="card-body">
         <h5 className="card-title font-weight-bold">{item.dateHuman}</h5>
           <p className="card-text">{item.address}</p>
@@ -43,11 +57,14 @@ const Appointments = () => {
                 <div className="ml-2 d-inline-block my-auto"><p className="m-0 font-weight-bold">{item.doctor.name}</p>
                   <span className="text-muted">{item.doctor.specialty}</span>
                 </div>
+                <button onClick={() => handleCancel(item.id)} className="btn btn-primary">delete</button>
             </div>
+            
       </div>
     </div>
-  )
-        
+    )
+  }
+   
     return (
       <>
         <div className="d-flex" id="wrapper">
@@ -58,15 +75,20 @@ const Appointments = () => {
             <Navbar />
             <div className="mt-3">
             <h4 className="ml-4"><Link to='/'><img alt="back" src='./images/back.svg' /></Link>&nbsp;Мои записи</h4>
+            <div className="d-block w-50 text-right">
+             { value !== null && <button className="btn btn-link" onClick={() => {
+                setValue(null)
+                }}>Показать все записи</button>}
+            </div>
               <div className="container-fluid row">
               <div className="filtered col-6 mt-3 overflow-auto" style={{maxHeight: '800px'}}>
-                {filtered && filtered.map((item) => renderAppointment(item))}
+                {filterAppointments(appointments)}
               </div>
                 <div className="col">
                   <Calendar 
-                  onChange={onChange} 
+                  onChange={setValue} 
                   value={value} 
-                  onClickDay={(value) => filterAppointments(value)} 
+                  onClickDay={(value) => setValue(value)} 
                   grouped={grouped}
                   tileContent={({ date, view }) => grouped.has(date.getTime()) && <span className="badge bg-light-blue rounded-circle">{grouped.get(date.getTime()).length}</span>}
                   className="mx-auto rounded"

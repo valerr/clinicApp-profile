@@ -3,7 +3,6 @@
 @import "./fonts";
 @import "variables";
 @import '~bootstrap/scss/bootstrap.scss';
-$brand-primary: #7761FF;
 
 #wrapper {
     overflow-x: hidden;
@@ -25,10 +24,6 @@ $brand-primary: #7761FF;
 
 #sidebar-wrapper .list-group {
   width: 15rem;
-}
-
-#sidebar-wrapper .list-group-item:hover {
-  color: red;
 }
 
 #page-content-wrapper {
@@ -66,8 +61,8 @@ $brand-primary: #7761FF;
     background-color: #50CAFF;
 }
 
-a:hover {
-  color: black !important;
+button.list-group-item:hover {
+  color: #7761FF !important;
 }
 
 .react-calendar__navigation {
@@ -78,10 +73,6 @@ a:hover {
   width: 100%;
   background: #EBE7FF;
 
-}
-
-.react-calendar__month-view__days__day--neighboringMonth:not {
-  background: white;
 }
 
 .react-calendar__navigation__label,
