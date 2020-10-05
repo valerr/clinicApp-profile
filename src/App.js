@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import Appointments from './components/Appointments';
+import Appointments from './components/Appointments/Appointments';
 import Home from './components/Home';
 
 function App() {

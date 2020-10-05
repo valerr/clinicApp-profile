@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Menu from './Menu';
-import Navbar from './Navbar';
-import { useSelector, useDispatch } from 'react-redux';
+import Sidebar from '../Sidebar';
+import Navbar from '../Navbar';
+import { useSelector } from 'react-redux';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import { Link } from 'react-router-dom';
-import { cancelAppointment } from '../actions';
+import AppointmentCard from './AppointmentCard';
 
 const Appointments = () => {
   const appointments = useSelector((state) => state.appointments);
@@ -29,47 +29,22 @@ const Appointments = () => {
   const grouped = groupByDay(appointments)
   const [value, setValue] = useState(null);
   
-  const dispatch = useDispatch();
-
   const filterAppointments = apps => {
     if (value === null) {
-      return appointments.map((item) => renderAppointment(item))
+      return appointments.map((item) => AppointmentCard(item))
     } else {
     const filtered = grouped.get((new Date(value)).getTime())
       if (filtered) {
-        return [...filtered].map((item) => renderAppointment(item))
+        return [...filtered].map((item) => AppointmentCard(item))
       }
     }
   };
 
-  const handleCancel = (id) => {
-    dispatch(cancelAppointment({id}));
-  }
-
-  const renderAppointment = (item) => {
-    return (
-    <div className="card mb-2" key={item.id}>
-      <div className="card-body">
-        <h5 className="card-title font-weight-bold">{item.dateHuman}</h5>
-          <p className="card-text">{item.address}</p>
-            <div className="d-flex flex-row">
-              <img alt="profile" src={`${item.doctor.imgUrl}`} />
-                <div className="ml-2 d-inline-block my-auto"><p className="m-0 font-weight-bold">{item.doctor.name}</p>
-                  <span className="text-muted">{item.doctor.specialty}</span>
-                </div>
-                <button onClick={() => handleCancel(item.id)} className="btn btn-primary">delete</button>
-            </div>
-            
-      </div>
-    </div>
-    )
-  }
-   
     return (
       <>
         <div className="d-flex" id="wrapper">
           <div className="bg-blue border-right text-white" id="sidebar-wrapper">
-              <Menu />
+              <Sidebar />
           </div>
           <div id="page-content-wrapper" className="bg-light">
             <Navbar />

@@ -1,13 +1,13 @@
 import React from 'react';
-import Menu from './Menu';
+import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import AppointmentsPreview from './AppointmentsPreview';
+import AppointmentsPreview from './Appointments/AppointmentsPreview';
 import MedicalRecords from './MedicalRecords';
 
 const Home = () => (
     <div className="d-flex" id="wrapper">
         <div className="bg-blue border-right text-white" id="sidebar-wrapper">
-            <Menu />
+            <Sidebar />
         </div>
         <div id="page-content-wrapper" className="bg-light">
             <Navbar />
