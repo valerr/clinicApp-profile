@@ -5,6 +5,7 @@ const reducer = createReducer({}, {
   [actions.fetchData]: (state, action) => ({
     ...state,
     appointments: [...action.payload],
+    currentMenu: 'profile',
   }),
   [actions.cancelAppointment]: (state, action) => {
     const { id } = action.payload;
@@ -13,6 +14,10 @@ const reducer = createReducer({}, {
       appointments: [...filtered],
     };
   },
+  [actions.changeCurrentMenu]: (state, action) => ({
+    ...state,
+    currentMenu: action.payload,
+  }),
 });
 
 export default reducer;

@@ -9,7 +9,7 @@ const MedicalRecords = () => (
         <div className="card mb-3 border-blue">
           <div className="row no-gutters">
             <div className="col-md-4 bg-light-blue d-flex">
-              <img src="./images/card.svg" className="card-img h-25 my-auto" alt="..." />
+              <img src="./images/card.svg" className="card-img h-25 my-auto" alt="card" />
             </div>
             <div className="col-md-8 d-flex">
               <div className="card-body my-auto">
@@ -28,7 +28,7 @@ const MedicalRecords = () => (
         <div className="card mb-3">
           <div className="row no-gutters">
             <div className="col-md-4 d-flex">
-              <img src="./images/results.svg" className="card-img my-auto h-25" alt="..." />
+              <img src="./images/results.svg" className="card-img my-auto h-25" alt="results" />
             </div>
             <div className="col-md-8 d-flex">
               <div className="card-body my-auto">
@@ -45,7 +45,7 @@ const MedicalRecords = () => (
         <div className="card mb-3">
           <div className="row no-gutters">
             <div className="col-md-4 d-flex">
-              <img src="./images/addinfo.svg" className="card-img my-auto h-25" alt="..." />
+              <img src="./images/addinfo.svg" className="card-img my-auto h-25" alt="addinfo" />
             </div>
             <div className="col-md-8 d-flex">
               <div className="card-body my-auto">
@@ -62,7 +62,7 @@ const MedicalRecords = () => (
         <div className="card mb-3">
           <div className="row no-gutters">
             <div className="col-md-4 d-flex">
-              <img src="./images/history.svg" className="card-img my-auto h-25" alt="..." />
+              <img src="./images/history.svg" className="card-img my-auto h-25" alt="history" />
             </div>
             <div className="col-md-8 d-flex">
               <div className="card-body my-auto">

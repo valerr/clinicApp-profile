@@ -11,3 +11,5 @@ export const fetchData = createAction('fetchData');
 // if server responds 200/204 reducer updates state
 
 export const cancelAppointment = createAction('cancelAppointment');
+
+export const changeCurrentMenu = createAction('changeCurrentMenu');

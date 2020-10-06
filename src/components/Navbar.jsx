@@ -8,19 +8,19 @@ const Navbar = () => (
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto mt-lg-0">
           <li className="nav-item pt-2">
-            <a className="nav-link" href="#"><img alt="profile" src="./images/search.svg" /></a>
+            <a className="nav-link" href="#"><img alt="search" src="./images/search.svg" /></a>
           </li>
           <li className="nav-item pt-2">
-            <a className="nav-link" href="#"><img alt="profile" src="./images/notifications.svg" /></a>
+            <a className="nav-link" href="#"><img alt="notifications" src="./images/notifications.svg" /></a>
           </li>
           <li className="nav-item pt-2">
-            <a className="nav-link" href="#"><img alt="profile" src="./images/eye.svg" /></a>
+            <a className="nav-link" href="#"><img alt="eye" src="./images/eye.svg" /></a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#"><img alt="profile" src="./images/profilePhoto.png" /></a>
+            <a className="nav-link" href="#"><img alt="profilePhoto" src="./images/profilePhoto.png" /></a>
           </li>
           <li className="nav-item dropdown pt-2">
-            <a className="nav-link" href="#"><img alt="profile" src="./images/dropdown.svg" /></a>
+            <a className="nav-link" href="#"><img alt="dropdown" src="./images/dropdown.svg" /></a>
           </li>
         </ul>
       </div>

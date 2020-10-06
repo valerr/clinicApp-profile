@@ -17,8 +17,9 @@ const AppointmentsPreview = () => {
           {rest && (
             <div>
               <p className="font-weight-bold pt-5">
-                Еще
+                Еще&nbsp;
                 {rest}
+                &nbsp;
                 записи
               </p>
               <Link to="/appointments">

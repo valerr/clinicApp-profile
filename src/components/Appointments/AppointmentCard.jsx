@@ -47,7 +47,7 @@ const AppointmentCard = ({ item }) => {
         <p className="card-text">{item.address}</p>
         <div className="d-flex justify-content-between">
           <div className="d-flex flex-row">
-            <img alt="profile" src={`${item.doctor.imgUrl}`} />
+            <img alt="doctorPhoto" src={`${item.doctor.imgUrl}`} />
             <div className="ml-2 d-inline-block my-auto">
               <p className="m-0 font-weight-bold">{item.doctor.name}</p>
               <span className="text-muted">{item.doctor.specialty}</span>
