@@ -1,4 +1,4 @@
-[](https://github.com/valerr/clinicApp-profile/workflows/build/badge.svg)
+![build](https://github.com/valerr/clinicApp-profile/workflows/build/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3ae8adcb820960b9d82e/maintainability)](https://codeclimate.com/github/valerr/clinicApp-profile/maintainability)
 
 Clinic profile page app. Made with Create-react-app, React, Redux, Bootstrap
